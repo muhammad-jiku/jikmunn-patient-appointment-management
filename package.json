@@ -25,6 +25,7 @@
     "input-otp": "^1.4.2",
     "lucide-react": "^0.487.0",
     "next": "15.2.5",
+    "node-appwrite": "^15.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.55.0",

@@ -9,7 +9,7 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: 'Meet Your Doc',
+  title: 'Meet the Doc',
   description:
     'A healthcare patient appointment management System designed to streamline patient registration, appointment scheduling, and medical records management for healthcare providers.',
 };

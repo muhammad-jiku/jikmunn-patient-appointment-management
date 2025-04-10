@@ -3,7 +3,6 @@
 
 import { ID, Query } from 'node-appwrite';
 import { InputFile } from 'node-appwrite/file';
-
 import {
   BUCKET_ID,
   DATABASE_ID,

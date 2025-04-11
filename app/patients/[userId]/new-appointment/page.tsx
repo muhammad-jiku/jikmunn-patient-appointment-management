@@ -11,7 +11,7 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
       <section className='custom-scrollbar container my-auto'>
         <div className='sub-container max-w-[860px] flex-1 justify-between'>
           <Image
-            src='/assets/icons/logo-full.svg'
+            src='/assets/icons/logo-icon.svg'
             height={1000}
             width={1000}
             alt='logo'
@@ -25,7 +25,7 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
           />
 
           <p className='copyright mt-10 py-12'>
-            © {year} CarePluses. All rights reserverd.
+            © {year} Meet the Doc. All rights reserverd.
           </p>
         </div>
       </section>

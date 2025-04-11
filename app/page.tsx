@@ -10,8 +10,8 @@ const Home = ({ searchParams }: SearchParamProps) => {
   return (
     <div className='flex h-screen max-h-screen'>
       {isAdmin && <PasskeyModal />}
-
-      <section className='remove-scrollbar container my-auto'>
+      {/* <section className='remove-scrollbar container my-auto'> */}
+      <section className=' container my-auto'>
         <div className='sub-container max-w-[496px]'>
           <Image
             src='/assets/icons/logo-full.svg'

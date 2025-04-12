@@ -2,14 +2,16 @@ import { AppointmentForm } from '@/components/forms/AppointmentForm';
 import { getPatient } from '@/lib/actions/patients.actions';
 import Image from 'next/image';
 
-const Appointment = async ({ params: { userId } }: SearchParamProps) => {
-  const year = new Date().getFullYear();
+const Appointment = async (props: SearchParamProps) => {
+  const params = await props.params;
+  const userId = params.userId;
   const patient = await getPatient(userId);
+  const year = new Date().getFullYear();
 
   return (
     <div className='flex h-screen max-h-screen'>
-      <section className='custom-scrollbar container my-auto'>
-        <div className='sub-container max-w-[860px] flex-1 justify-between'>
+      <section className='custom-scrollbar container'>
+        <div className='sub-container max-w-[860px] flex-1 flex-col py-10'>
           <Image
             src='/assets/icons/logo-icon.svg'
             height={1000}
@@ -24,8 +26,8 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
             type='create'
           />
 
-          <p className='copyright mt-10 py-12'>
-            © {year} Meet the Doc. All rights reserverd.
+          <p className='copyright py-12'>
+            © {year} Meet the Doc. All rights reserved.
           </p>
         </div>
       </section>
@@ -35,7 +37,7 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
         height={1500}
         width={1500}
         alt='appointment'
-        className='side-img max-w-[390px] bg-bottom'
+        className='side-img max-w-[390px]'
       />
     </div>
   );

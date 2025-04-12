@@ -3,12 +3,16 @@ import { getPatient, getUser } from '@/lib/actions/patients.actions';
 import Image from 'next/image';
 import { redirect } from 'next/navigation';
 
-const Register = async ({ params: { userId } }: SearchParamProps) => {
-  const year = new Date().getFullYear();
+const Register = async (props: SearchParamProps) => {
+  const params = await props.params;
+  const userId = params.userId;
   const user = await getUser(userId);
   const patient = await getPatient(userId);
+  const year = new Date().getFullYear();
 
-  if (patient) redirect(`/patients/${userId}/new-appointment`);
+  if (patient) {
+    redirect(`/patients/${userId}/new-appointment`);
+  }
 
   return (
     <div className='flex h-screen max-h-screen'>

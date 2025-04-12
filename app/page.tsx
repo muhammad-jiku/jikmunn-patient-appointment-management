@@ -3,15 +3,16 @@ import { PasskeyModal } from '@/components/shared/PasskeyModal';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Home = ({ searchParams }: SearchParamProps) => {
-  const year = new Date().getFullYear();
+const Home = async (props: SearchParamProps) => {
+  const searchParams = await props.searchParams; // await before destructuring properties
   const isAdmin = searchParams?.admin === 'true';
+  const year = new Date().getFullYear();
 
   return (
     <div className='flex h-screen max-h-screen'>
       {isAdmin && <PasskeyModal />}
-      <section className='custom-scrollbar container my-auto'>
-        <div className='sub-container max-w-[496px]'>
+      <section className='custom-scrollbar container'>
+        <div className='sub-container max-w-[496px] flex-1 flex-col py-10'>
           <Image
             src='/assets/icons/logo-icon.svg'
             height={1000}
@@ -22,7 +23,7 @@ const Home = ({ searchParams }: SearchParamProps) => {
 
           <PatientForm />
 
-          <div className='text-14-regular mt-20 flex justify-between'>
+          <div className='text-14-regular my-20 py-4 flex justify-between'>
             <p className='justify-items-end text-dark-600 xl:text-left'>
               © {year} Meet the Doc. All rights reserved.
             </p>

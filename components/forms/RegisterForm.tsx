@@ -30,7 +30,7 @@ type PatientFormData = z.infer<typeof PatientFormValidation>;
 
 const RegisterForm = ({ user }: { user: User }) => {
   const router = useRouter();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   // Create custom default values that include required consent fields
   const customDefaultValues: Partial<PatientFormData> = {

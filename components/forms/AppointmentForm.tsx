@@ -34,7 +34,7 @@ export const AppointmentForm = ({
   setOpen?: Dispatch<SetStateAction<boolean>>;
 }) => {
   const router = useRouter();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const AppointmentFormValidation = getAppointmentSchema(type);
 
@@ -141,7 +141,7 @@ export const AppointmentForm = ({
           <section className='mb-12 space-y-4'>
             <h1 className='header'>New Appointment</h1>
             <p className='text-dark-700'>
-              Request a new appointment in 10 seconds.
+              Request a new appointment to consult the doctor.
             </p>
           </section>
         )}
@@ -177,7 +177,7 @@ export const AppointmentForm = ({
               name='schedule'
               label='Expected appointment date'
               showTimeSelect
-              dateFormat='mm/dd/yyyy  -  h:mm aa'
+              dateFormat='MM/dd/yyyy  -  h:mm aa'
             />
 
             <div

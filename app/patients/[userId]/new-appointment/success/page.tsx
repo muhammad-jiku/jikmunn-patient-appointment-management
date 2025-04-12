@@ -9,9 +9,9 @@ const RequestSuccess = async ({
   searchParams,
   params: { userId },
 }: SearchParamProps) => {
-  const year = new Date().getFullYear();
   const appointmentId = (searchParams?.appointmentId as string) || '';
   const appointment = await getAppointment(appointmentId);
+  const year = new Date().getFullYear();
 
   const doctor = Doctors.find(
     (doctor) => doctor.name === appointment.primaryPhysician
